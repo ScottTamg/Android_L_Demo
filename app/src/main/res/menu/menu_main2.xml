@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.xwtang.android_l_demo.Main2Activity">
+    <item android:id="@+id/action_listview" android:title="ListView"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+    <item android:id="@+id/action_gridview" android:title="GridView"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+    <item android:id="@+id/action_hor_gridview" android:title="HorizontalGridView"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+    <item android:id="@+id/action_staggered" android:title="StaggeredGridView"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+</menu>

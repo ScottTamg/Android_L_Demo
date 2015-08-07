@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/lp_white"
+        android:elevation="5dp"
+        android:translationZ="5dp"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/first_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lp_white"
+            android:text="text_white"
+            android:layout_marginTop="10dp"
+            android:elevation="1dp"/>
+
+        <TextView
+            android:id="@+id/txt_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lp_white"
+            android:text="text_red"
+            android:layout_marginTop="10dp"
+            android:translationZ="0dp"
+            android:elevation="2dp"/>
+
+        <TextView
+            android:id="@+id/txt_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lp_white"
+            android:text="text_green"
+            android:layout_marginTop="10dp"
+            android:translationZ="0dp"
+            android:elevation="3dp"/>
+
+        <TextView
+            android:id="@+id/txt_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lp_white"
+            android:text="text_blue"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:translationX="10dp"
+            android:translationY="20dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
