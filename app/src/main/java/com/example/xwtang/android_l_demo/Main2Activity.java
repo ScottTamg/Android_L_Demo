@@ -2,13 +2,13 @@ package com.example.xwtang.android_l_demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -19,6 +19,7 @@ public class Main2Activity extends Activity {
     private RecyclerView recyclerView;
     private List<String> mDatas;
     private SimpleAdapter simpleAdapter;
+    private CardView mCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
