@@ -14,7 +14,10 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONObject;
 
 import java.lang.reflect.Method;
 
@@ -22,6 +25,7 @@ public class MainActivity extends Activity {
 
     private TextView first_txt;
     private Button button;
+    private final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +88,32 @@ public class MainActivity extends Activity {
             }
         });
 
-        volleyGet();
+//        GetStringRequest();
+//        GetObjectRequest();
     }
 
-    private void volleyGet() {
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MyApplication.getHttpQueue().cancelAll(TAG);
+    }
+
+    private void GetVolleyRequest() {
+        String url = "www.baidu.com";
+        VolleyRequest.GetStringRequest(this, url, TAG, new VolleyRequestListener(this, VolleyRequestListener.mListener, VolleyRequestListener.mErrorListener) {
+            @Override
+            public void OnSuccess(Object response) {
+
+            }
+
+            @Override
+            public void OnError(VolleyError error) {
+
+            }
+        });
+    }
+
+    private void GetStringRequest() {
         String url = "www.baidu.com";
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -100,5 +126,26 @@ public class MainActivity extends Activity {
 
             }
         });
+
+        request.setTag(TAG);
+        MyApplication.getHttpQueue().add(request);
+    }
+
+    private void GetObjectRequest() {
+        String url = "www.baidu.com";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        request.setTag(TAG);
+        MyApplication.getHttpQueue().add(request);
     }
 }
